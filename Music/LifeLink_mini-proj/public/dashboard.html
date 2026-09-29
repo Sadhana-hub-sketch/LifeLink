@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink - Donor Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="main-nav"></header>
+
+  <main class="container">
+    <!-- Profile & Countdown Row -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">
+          <span>Donor Profile</span>
+          <span id="donor-blood-badge" class="badge badge-blood">--</span>
+        </div>
+        <div id="profile-info">Loading profile...</div>
+        <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between;">
+          <label for="available-toggle" style="font-weight: 600; cursor: pointer;">Available for Emergency Requests</label>
+          <input type="checkbox" id="available-toggle" style="width: 20px; height: 20px; cursor: pointer;">
+        </div>
+      </div>
+
+      <div id="countdown-card" class="card countdown-box">
+        <div id="countdown-display">
+          <div class="countdown-num" id="countdown-days">--</div>
+          <div id="countdown-subtext" style="font-size: 0.95rem; font-weight: 600;">Calculating eligibility...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requests Near You -->
+    <div class="card">
+      <h2 class="card-title">Urgent Requests Near You (Within 50 km)</h2>
+      <div id="nearby-requests-container">Loading nearby requests...</div>
+    </div>
+
+    <!-- Log a Donation Form & History Row -->
+    <div class="grid-2">
+      <div class="card">
+        <h2 class="card-title">Log a Walk-in Donation</h2>
+        <form id="log-donation-form">
+          <div class="form-group">
+            <label for="donation-date">Donation Date *</label>
+            <input type="date" id="donation-date" required>
+          </div>
+          <div class="form-group">
+            <label for="donation-units">Units Donated</label>
+            <input type="number" id="donation-units" min="1" max="5" value="1" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Record Donation
+          </button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">My Donation History</h2>
+        <div id="donation-history-container">Loading history...</div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/common.js"></script>
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

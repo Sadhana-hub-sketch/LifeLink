@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink - Request Details</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="main-nav"></header>
+
+  <main class="container">
+    <div id="request-detail-card" class="card">
+      Loading request details...
+    </div>
+
+    <!-- Manager Section (Shown only if manage key exists) -->
+    <div id="manager-section" class="card" style="display: none; border-top: 4px solid var(--primary-red);">
+      <div class="card-title">
+        <span>Requester Management Console</span>
+        <button id="cancel-request-btn" class="btn btn-sm btn-secondary" style="color: var(--red-text);">
+          🚫 Cancel Request
+        </button>
+      </div>
+
+      <!-- Fulfillment Progress -->
+      <div style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">
+          <span>Progress</span>
+          <span id="progress-text">0 of 0 units fulfilled</span>
+        </div>
+        <div class="bar-track" style="height: 12px;">
+          <div id="progress-bar-fill" class="bar-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Accepted Donors List -->
+      <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 12px;">Accepted Donors</h3>
+      <div id="accepted-donors-container">Loading accepted donors...</div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/common.js"></script>
+  <script type="module" src="/js/request.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink - Urgent Blood Requests</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="main-nav"></header>
+
+  <main class="container">
+    <!-- Header with Post Request Button -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h1 style="font-size: 1.5rem; font-weight: 700;">Active Blood Requests</h1>
+      <button id="show-post-modal-btn" class="btn btn-primary">➕ Post Blood Request</button>
+    </div>
+
+    <!-- Filters Card -->
+    <div class="card">
+      <div class="form-row">
+        <div class="form-group" style="flex: 1;">
+          <label for="filter-blood-group">Filter Blood Group</label>
+          <select id="filter-blood-group">
+            <option value="">All Blood Groups</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="flex: 1;">
+          <label for="filter-city">Filter City</label>
+          <select id="filter-city"></select>
+        </div>
+
+        <div class="form-group" style="flex: 1;">
+          <label for="filter-urgency">Filter Urgency</label>
+          <select id="filter-urgency">
+            <option value="">All Urgency Levels</option>
+            <option value="critical">Critical (expires in 6h)</option>
+            <option value="urgent">Urgent (expires in 24h)</option>
+            <option value="normal">Normal (expires in 72h)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requests List Container -->
+    <div id="requests-list-container">Loading requests...</div>
+
+    <!-- Post Request Modal Card -->
+    <div id="post-request-card" class="card" style="display: none; background-color: #fff; border: 2px solid var(--primary-red); margin-top: 20px;">
+      <div class="card-title">
+        <span>Post an Urgent Blood Request</span>
+        <button type="button" id="close-post-modal-btn" class="btn btn-sm btn-secondary">✖ Close</button>
+      </div>
+
+      <form id="post-request-form">
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="patient-name">Patient Name *</label>
+            <input type="text" id="patient-name" required placeholder="Patient Name">
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label for="hospital">Hospital / Clinic *</label>
+            <input type="text" id="hospital" required placeholder="Hospital Name & Address">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="req-blood-group">Required Blood Group *</label>
+            <select id="req-blood-group" required>
+              <option value="">Select...</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="flex: 1;">
+            <label for="req-units">Units Needed (1-10) *</label>
+            <input type="number" id="req-units" min="1" max="10" value="1" required>
+          </div>
+
+          <div class="form-group" style="flex: 1;">
+            <label for="req-urgency">Urgency Level *</label>
+            <select id="req-urgency" required>
+              <option value="urgent">Urgent (+24h)</option>
+              <option value="critical">Critical (+6h)</option>
+              <option value="normal">Normal (+72h)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="contact-name">Contact Person *</label>
+            <input type="text" id="contact-name" required placeholder="Contact Name">
+          </div>
+
+          <div class="form-group" style="flex: 1;">
+            <label for="contact-phone">Contact Phone *</label>
+            <input type="tel" id="contact-phone" required pattern="^\+?\d{10,13}$" placeholder="Contact Phone">
+          </div>
+
+          <div class="form-group" style="flex: 1;">
+            <label for="req-city">City *</label>
+            <select id="req-city" required></select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          Submit Blood Request
+        </button>
+      </form>
+    </div>
+
+    <!-- Post Success Manage Link Modal -->
+    <div id="manage-link-card" class="card" style="display: none; background-color: var(--green-bg); border-color: #81c784; padding: 20px;">
+      <h3 style="color: var(--green-text); font-size: 1.15rem; margin-bottom: 8px;">Request Created Successfully!</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 12px;">
+        Use your secret manage link below to view accepted donors, confirm donations, or cancel the request. Keep this link safe!
+      </p>
+      <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+        <input type="text" id="manage-link-url" readonly style="flex: 1; font-family: monospace; font-size: 0.85rem; background-color: #fff;">
+        <a id="open-manage-btn" href="#" class="btn btn-sm btn-primary">Open Link</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/common.js"></script>
+  <script type="module" src="/js/requests.js"></script>
+</body>
+</html>

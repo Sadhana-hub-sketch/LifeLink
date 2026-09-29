@@ -1,0 +1,17 @@
+[
+  { "name": "Chennai", "lat": 13.0827, "lng": 80.2707 },
+  { "name": "Coimbatore", "lat": 11.0168, "lng": 76.9558 },
+  { "name": "Madurai", "lat": 9.9252, "lng": 78.1198 },
+  { "name": "Tiruchirappalli", "lat": 10.7905, "lng": 78.7047 },
+  { "name": "Salem", "lat": 11.6643, "lng": 78.1460 },
+  { "name": "Tirunelveli", "lat": 8.7139, "lng": 77.7567 },
+  { "name": "Vellore", "lat": 12.9165, "lng": 79.1325 },
+  { "name": "Erode", "lat": 11.3410, "lng": 77.7172 },
+  { "name": "Bengaluru", "lat": 12.9716, "lng": 77.5946 },
+  { "name": "Hyderabad", "lat": 17.3850, "lng": 78.4867 },
+  { "name": "Kochi", "lat": 9.9312, "lng": 76.2673 },
+  { "name": "Mumbai", "lat": 19.0760, "lng": 72.8777 },
+  { "name": "Delhi", "lat": 28.6139, "lng": 77.2090 },
+  { "name": "Kolkata", "lat": 22.5726, "lng": 88.3639 },
+  { "name": "Pune", "lat": 18.5204, "lng": 73.8567 }
+]

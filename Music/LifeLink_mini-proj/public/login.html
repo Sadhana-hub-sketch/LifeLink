@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink - Donor Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="main-nav"></header>
+
+  <main class="container">
+    <div class="card" style="max-width: 440px; margin: 40px auto 0 auto;">
+      <h1 class="card-title">Donor Login</h1>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+        Enter your registered phone number to access your dashboard.
+      </p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required pattern="^\+?\d{10,13}$" placeholder="e.g. 9876543210">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Login
+        </button>
+      </form>
+
+      <div style="margin-top: 20px; text-align: center; font-size: 0.9rem;">
+        Don't have an account? <a href="register.html" style="color: var(--primary-red); font-weight: 600;">Register as Donor</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/common.js"></script>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

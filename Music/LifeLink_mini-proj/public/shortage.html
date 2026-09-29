@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeLink - Shortage Heatmap & Alerts</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="main-nav"></header>
+
+  <main class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h1 style="font-size: 1.5rem; font-weight: 700;">Blood Shortage Heatmap & Alerts</h1>
+      <span id="last-updated-text" style="font-size: 0.85rem; color: var(--text-muted);">Auto-refreshes every 30s</span>
+    </div>
+
+    <!-- Alert Banner Container -->
+    <div id="alert-banner-container" style="display: none;"></div>
+
+    <!-- Heatmap Card -->
+    <div class="card">
+      <div class="card-title">
+        <span>Demand vs Eligible Compatible Supply Grid</span>
+        <div style="display: flex; gap: 12px; font-size: 0.8rem; font-weight: normal;">
+          <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: var(--red-bg); border: 1px solid var(--red-text); display: inline-block;"></span> Critical</span>
+          <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: var(--amber-bg); border: 1px solid var(--amber-text); display: inline-block;"></span> Low</span>
+          <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: var(--green-bg); border: 1px solid var(--green-text); display: inline-block;"></span> Covered</span>
+          <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: var(--grey-bg); display: inline-block;"></span> No Demand</span>
+        </div>
+      </div>
+
+      <div id="heatmap-container" style="overflow-x: auto;">
+        Loading heatmap grid...
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/common.js"></script>
+  <script type="module" src="/js/shortage.js"></script>
+</body>
+</html>
